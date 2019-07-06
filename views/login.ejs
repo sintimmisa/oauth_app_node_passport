@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+   <link rel="stylesheet/text" href="./styles.css"/>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+    }
+
+    nav {
+        background: #ff5353;
+        padding: 20px 10px;
+    }
+
+    nav ul {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    nav li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 10px 0 0;
+
+    }
+
+    nav a {
+        text-decoration: none;
+        font-size: 18px;
+        color: #fff;
+        background: rgba(255, 255, 2555, 0.2);
+        padding: 10px;
+        display: block;
+    }
+
+    main,
+    header {
+        width: 960px;
+        margin: 30px auto;
+        padding: 0 10px;
+        color: #333;
+
+    }
+    .google-btn{
+        background:#ff5353;
+        color:#fff;
+        font-size: 18px;
+        padding:10px;
+        text-decoration: none;
+        border-radius: 25px;
+    }
+    .google-btn:hover{
+        box-shadow: 0 0 25px #ff5353;
+        transition: box-shadow .8s ease-in-out;
+    }
+    .facebook-btn{
+        background:steelblue;
+        color:#fff;
+        font-size: 18px;
+        padding:10px;
+        text-decoration: none;
+        margin-left:10px;
+        border-radius: 25px;
+    }
+     .facebook-btn:hover{
+        box-shadow: 0 0 25px steelblue;
+        transition: box-shadow .8s ease-in-out;
+    }
+</style>
+
+</head>
+<body>
+    <nav>
+        <ul>
+        
+            <li><a href="/">Home</a></li>
+            <%  if (user){   %>
+            <li><a href="/auth/logout">Logout</a></li>
+            <%  } else {     %>
+            <li><a href="/auth/login">Login</a></li>
+            <% } %>
+            <li><a href="/profile">Profile</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Login user...</h1>
+    </header>
+    <main>
+        <a class="google-btn" href="/auth/google">Google+</a>
+        <a class="facebook-btn" href="/auth/facebook">Facebook</a>
+    </main>
+    
+</body>
+</html>
